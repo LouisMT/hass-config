@@ -1,0 +1,107 @@
+light.fibaro_system_fgd212_dimmer_2_level_2:
+    hidden: true
+light.fibaro_system_fgd212_dimmer_2_level:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_level:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_level_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_type:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_alarm_type_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_energy_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_energy:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_exporting:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_exporting_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_heat:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_4:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_management:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_management_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_system:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_system_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_heat_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_3:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power_2:
+    hidden: true
+sensor.fibaro_system_fgd212_dimmer_2_power:
+    hidden: true
+
+
+sensor.fibaro_system_fgms001_motion_sensor_general:
+    hidden: true
+
+sensor.fibaro_system_fgms001_motion_sensor_general_2:
+    hidden: true
+
+
+
+
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
+    hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:
+    hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+    hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+    hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+    hidden: true
+sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+    hidden: true
+
+
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
+    hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type:
+    hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+    hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+    hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+    hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+    hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+    hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+    hidden: true
+
+climate.lyric:
+    friendly_name: Thermostaat
+
+
+sensor.compal_broadband_networks_inc_ch7465lg_bytes_received:
+    hidden: true
+sensor.compal_broadband_networks_inc_ch7465lg_bytes_sent:
+    hidden: true
+sensor.compal_broadband_networks_inc_ch7465lg_kbytesec_received:
+    hidden: true
+sensor.compal_broadband_networks_inc_ch7465lg_kbytesec_sent:
+    hidden: true
+sensor.compal_broadband_networks_inc_ch7465lg_packets_received:
+    hidden: true
+sensor.compal_broadband_networks_inc_ch7465lg_packets_sent:
+    hidden: true
+sensor.compal_broadband_networks_inc_ch7465lg_packetssec_received:
+    hidden: true
+sensor.compal_broadband_networks_inc_ch7465lg_packetssec_sent:
+    hidden: true
+

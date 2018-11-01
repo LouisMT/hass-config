@@ -1,0 +1,20 @@
+  marantz_power_on_off:
+    alias: Stereo AAN/UIT
+    sequence:
+    - service: shell_command.marantz_power_on_off
+  marantz_vol_down:
+    alias: Stereo Volume lager
+    sequence:
+    - service: shell_command.marantz_vol_down
+  marantz_vol_up:
+    alias: Stereo Volume hoger
+    sequence:
+    - service: shell_command.marantz_vol_up
+  marantz_chromecast:
+    alias: Chromecast
+    sequence:
+    - service: shell_command.marantz_chromecast
+  marantz_ziggo:
+    alias: Ziggo
+    sequence:
+    - service: shell_command.marantz_ziggo

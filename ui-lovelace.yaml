@@ -1,0 +1,97 @@
+title: vbwb100
+# Include external resources
+resources:
+  - url: /local/my-custom-card.js
+    type: js
+  - url: /local/my-webfont.css
+    type: css
+
+excluded_entities:
+  - weblink.router
+views:
+  - title: Home
+    id: home
+    theme: dark-mode
+    cards:
+      - id: peoplehome
+        type: glance
+        title: Waar?
+        entities:
+          - device_tracker.michiel_telefoon
+          - device_tracker.djenie_telefoon
+          - device_tracker.daisy_telefoon
+
+      - id: lights
+        type: entities
+        title: Licht
+        entities:
+          - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+          - light.fibaro_system_fgd212_dimmer_2_level_3
+          - light.fibaro_system_fgd212_dimmer_2_level_4
+          - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch
+          - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_2
+          - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_4
+          - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_3
+
+      - type: thermostat
+        title: beneden
+        entity: climate.lyric
+
+      - id: stereo
+        type: entities
+        title: Stereo
+        entities:
+          - script.marantz_ziggo
+          - script.marantz_chromecast
+          - script.marantz_vol_up
+          - script.marantz_vol_down
+          - script.marantz_power_on_off
+
+      - id: automations
+        type: entities
+        title: Automations
+        entities:
+          - automation.buitenlicht_aan_na_zonsondergang
+          - automation.buitenlicht_uit_na_zonsopgang
+          - automation.ganglicht_aan_bij_beweging
+          - automation.ganglicht_uit_na_1_minuut_geen_beweging
+          - automation.keukenlicht_aan_bij_beweging
+          - automation.keukenlicht_uit_na_1_minuut_geen_beweging
+          - automation.lets_encrypt_renewal
+          - automation.meld_als_michiel_op_station_haarlem_is
+
+      - type: media-control
+        entity: media_player.huiskamer
+      - type: media-control
+        entity: media_player.slaapkamer
+
+      - type: picture-entity
+        title: Garage
+        entity: camera.garage
+        camera_image: camera.garage
+
+      - type: map
+        entities:
+          - device_tracker.michiel_telefoon
+          - device_tracker.djenie_telefoon
+          - device_tracker.daisy_telefoon
+          - zone.home
+
+      - type: weather-forecast
+        entity: weather.velserbroek
+
+
+  - icon: mdi:home-assistant
+    title: Second view
+    cards:
+      - type: entities
+        title: Example
+        entities:
+          - light.kitchen
+          - switch.ac
+          - entity: light.living_room
+            name: LR Lights
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.

@@ -1,0 +1,81 @@
+homeassistant:
+  name: Thuis
+  latitude: !secret latitude 
+  longitude: !secret longitude
+  elevation: 1
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+  customize: !include customize.yaml
+logger:
+  default: error
+frontend:
+config:
+
+zone: !include zones.yaml
+
+http:
+  api_password: !secret http_password
+  base_url: !secret base_url
+updater:
+discovery:
+conversation:
+history:
+
+weather:
+  - platform: buienradar
+    name: 'Velserbroek'
+    forecast: True
+    latitude: 52.3
+    longitude: 4.77
+logbook:
+map:
+sun:
+sensor:
+  - platform: buienradar
+    latitude: 52.3 
+    longitude: 4.77
+    monitored_conditions:
+      - symbol
+      - humidity
+      - temperature
+      - windspeed
+      - pressure
+
+  - platform: postnl
+    username: !secret postnl_username
+    password: !secret postnl_password
+
+#  - platform: google_travel_time
+#    api_key: !secret google_maps_api_key
+#    origin: Trondheim, Norway
+#    destination: Paris, France
+tts:
+  - platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+shell_command: !include shell_commands.yaml
+zwave:
+  usb_path: /dev/ttyACM0
+
+ffmpeg:  
+  ffmpeg_bin: /usr/bin/ffmpeg
+camera:  
+  - platform: ffmpeg  
+    input: !secret cam_url
+    name: garage
+
+device_tracker:
+  - platform: owntracks_http
+    track_new_devices: yes
+lyric:
+  client_id: !secret lyric_client_id
+  client_secret: !secret lyric_client_secret
+
+
+notify:
+  - platform: html5
+    name: notifier
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id

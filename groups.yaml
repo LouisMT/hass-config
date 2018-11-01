@@ -1,0 +1,38 @@
+lights:
+  name: Lampen en temperatuur
+  view: false
+  control: hidden
+  entities:
+  - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+  - light.fibaro_system_fgd212_dimmer_2_level_3
+  - light.fibaro_system_fgd212_dimmer_2_level_4
+  - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch
+  - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_2
+  - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_4
+  - switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_3
+  - climate.lyric
+
+automations:
+  control: hidden
+  name: Automations
+  view: false
+  entities:
+  - automation.buitenlicht_aan_zonsondergang
+  - automation.buitenlicht_uit_zonsopkomst
+  - automation.ganglicht_aan_bij_beweging_en_licht
+  - script.timed_ganglamp
+  - script.timer_off_ganglamp
+  - automation.keukenlicht_aan_bij_beweging_en_licht
+  - script.timed_keukenlamp
+  - script.timer_off_keukenlamp
+
+stereo:
+  control: hidden
+  name: Stereo
+  view: false
+  entities:
+  - script.marantz_ziggo
+  - script.marantz_chromecast
+  - script.marantz_vol_up
+  - script.marantz_vol_down
+  - script.marantz_power_on_off

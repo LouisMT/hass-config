@@ -1,0 +1,6 @@
+  marantz_vol_down: 'ssh -i /config/.ssh/id_rsa -oStrictHostKeyChecking=no pi@192.168.178.199 /home/pi/marantz VOL_DOWN'
+  marantz_vol_up: 'ssh -i /config/.ssh/id_rsa -oStrictHostKeyChecking=no pi@192.168.178.199 /home/pi/marantz VOL_UP'
+  marantz_power_on_off: 'ssh -i /config/.ssh/id_rsa -oStrictHostKeyChecking=no pi@192.168.178.199 /home/pi/marantz POWER_ON_OFF'
+  marantz_chromecast: 'ssh -i /config/.ssh/id_rsa -oStrictHostKeyChecking=no pi@192.168.178.199 /home/pi/marantz DVD'
+  marantz_ziggo: 'ssh -i /config/.ssh/id_rsa -oStrictHostKeyChecking=no pi@192.168.178.199 /home/pi/marantz DSS'
+

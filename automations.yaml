@@ -1,0 +1,106 @@
+- id: buitenlicht_aan_zonsondergang
+  alias: Buitenlicht aan na zonsondergang
+  trigger:
+  - event: sunset
+    platform: sun
+  action:
+    service: switch.turn_on
+    entity_id: switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch
+
+- id: buitenlicht_uit_zonsopkomst
+  alias: Buitenlicht uit na zonsopgang
+  trigger:
+  - event: sunrise
+    platform: sun
+  action:
+    service: switch.turn_off
+    entity_id: switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch
+
+- id: keukenlicht_aan_bij_beweging_en_licht
+  alias: Keukenlicht aan bij beweging
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+        brightness: 125
+
+- alias: Keukenlicht uit na 1 minuut geen beweging
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      to: 'off'
+      for:
+        minutes: 01
+        seconds: 00
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+
+- id: ganglicht_aan_bij_beweging_en_licht
+  alias: Ganglicht aan bij beweging
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+#    - condition: time
+#      after: '19:00:00'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_2
+
+- alias: Ganglicht uit na 1 minuut geen beweging
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+      to: 'off'
+      for:
+        minutes: 01
+        seconds: 00
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.fibaro_system_fgs222_double_relay_switch_2x15kw_switch_2
+
+
+- id: letsencrypt-renewal
+  alias: "Let's Encrypt Renewal"
+  trigger:
+  - platform: time
+    at: '00:00:00'
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: core_letsencrypt
+
+- id: notify-op-station
+  alias: "Meld als Michiel op station Haarlem is"
+  trigger:
+  - platform: zone
+    entity_id: device_tracker.michiel_telefoon
+    zone: zone.station_haarlem
+    event: enter
+  condition: 
+  - condition: time
+    after: '16:00:00'
+  action:
+  - service: notify.notifier
+    data:
+      message: "Michiel is op het station"
